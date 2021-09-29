@@ -271,13 +271,13 @@ buttonAdd2.addEventListener("click", () => {
         alert("Por favor, preencha todos os campos")
 
     } else {
-        const amountFormat = utils.verificationNumber(amount)
+        const amountFormat = utils.verificationNumber(Math.round(amount))
 
         let idGenerated = generatorId(0)
         Transaction.add({
             id: idGenerated,
             description: description,
-            amount: amount * 100,
+            amount: Math.round(amount) * 100,
             date: time
         })
 
