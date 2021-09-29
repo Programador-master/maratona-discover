@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <title>DevFinaces</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/index.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    
+</head>
+
+<body onload="load()">
+
+    <header>
+        <img src="img/logo.svg" alt="Logo dev.finances" class="logo">
+    </header>
+
+    <main class="container">
+        <section class="balanco">
+            <h2 class="sr-only">Balanço</h2>
+
+            <div id="cards" class="cards entrada">
+                    <h3>
+                        Entradas:
+                        <img src="img/income.svg" alt="Imagem de entrada">
+                    </h3>
+    
+                <p class="values" id="income">R$ 0,00</p>
+            </div>
+        
+            <div id="cards" class="cards saida">
+                <h3>
+                    Saídas:
+                    <img src="img/expense.svg" alt="Imagem de saida">
+                </h3>
+    
+                <p class="values" id="expense">R$ 0,00</p>
+            </div>
+
+            <div id="cards" class="cards total">
+                <h3>
+                    Total:
+                    <img src="img/total.svg" alt="Imgem total">
+
+                </h3>
+    
+                <p class="values" id="total">R$ 0,00</p>
+            </div>
+
+        </section>
+
+        <section class="table">
+            <h2 class="sr-only">Transações</h2>
+
+            <a href="#" class="button new">+ Nova Transação</a>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody class="test20">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div id="form">
+                <h2>Nova transação</h2>
+
+                <form action="">
+                    <div class="input-group">
+                        <label for="description" class="sr-only">Descrição</label>
+                        <input type="text" placeholder="Descrição" id="description">
+                        <label for="value" class="sr-only">Valor</label>
+                        <input type="number" placeholder="0,00" id="value" step="0.01">
+
+                        <small>Use o sinal - (negativo) para depesas e ,(virgula) para decimais</small>
+
+                        <label for="date" class="sr-only">Data</label>
+                        <input type="date" placeholder="yyyy/mm/dd" id="date">
+
+                        <div class="actions">
+                            <a href="" class="button cancel">Cancelar</a>
+                            <button class="button add">Adicionar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlayEdit">
+        <div class="modal">
+            <div id="formEdit">
+                <h2>Nova transação</h2>
+
+                <form action=""">
+                    <div class="input-group">
+                        <label for="descriptionEdit" class="sr-only">Descrição</label>
+                        <input type="text" placeholder="Descrição" id="descriptionEdit">
+                        <label for="value" class="sr-only">Valor</label>
+                        <input type="number" placeholder="0,00" id="valueEdit" step="0.01">
+
+                        <small>Use o sinal - (negativo) para depesas e ,(virgula) para decimais</small>
+
+                        <label for="dateEdit" class="sr-only">Data</label>
+                        <input type="date" placeholder="yyyy/mm/dd" id="dateEdit">
+
+                        <div class="actions">
+                            <a href="" class="button cancelE">Cancelar</a>
+                            <button class="button edit">Editar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>DevFinaces</p>
+    </footer>
+    
+    <script src="scripts/modalActive.js"></script>
+    <script src="scripts/modalTransaction.js"></script>
+</body>
+
+</html>

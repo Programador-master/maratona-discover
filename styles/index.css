@@ -1,0 +1,330 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75%;
+}
+
+body {
+    background-color: #f0f2f5;
+
+    font-family: "Poppins", sans-serif;
+}
+
+a, #imgRemove {
+    cursor: pointer;
+}
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border-width: 0;
+}
+
+header,
+main section.table,
+main section.balanco div.cards {
+    min-width: 190px;
+}
+
+header {
+    background-color: rgb(19, 18, 18);
+    background-image: url(../img/backgroundHeader.jpeg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    border-bottom: 2px solid red;
+    
+
+    width: 100%;
+    padding: 1rem 0 10rem;
+
+    text-align: center;
+}
+
+header img{
+    background-color: rgba(41, 41, 41, 0.644);
+
+    border-radius: 0.5rem;
+    
+    padding: 0.3rem;
+}
+
+main.container {
+    width: min(90vw, 800px);
+
+    margin: auto;
+}
+
+main section.balanco {
+    margin-top: -5rem;
+}
+
+main section.balanco div.cards {
+    background-color: white;
+
+    padding: 1rem 1.5rem;
+
+    border-radius: 0.25rem;
+    border: 0.1pc solid rgb(19, 18, 18);
+
+    margin-bottom: 2rem;
+}
+
+main section.balanco div.cards h3{
+    font-weight: normal;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main section.balanco div.cards p {
+    font-size: 2rem;
+    line-height: 3rem;
+    word-wrap: break-word;
+    
+    max-width: 90%;
+}
+
+main section.balanco div.cards.total{
+    background-color: green;
+
+    color: white;
+}
+
+main section.table a {
+    text-decoration: none;
+
+    color: #49aa26;
+}
+
+main section.table a:hover {
+    color: #3dd705;
+    
+}
+
+main section.table a.button.new {
+    display: inline-block;
+    
+    margin-bottom: 0.8rem;
+}
+
+main section.table {
+    display: block;
+
+    overflow-x: auto;
+}
+
+main section.table table {
+    width: 100%;
+
+    border-spacing: 0 0.5rem;
+
+    color: #969cb3;
+}
+
+main section.table table tbody tr {
+    opacity: 0.7;
+}
+
+main section.table table tr:hover {
+    opacity: 1;
+}
+
+main section.table table th {
+    background-color: white;
+
+    font-weight: normal;
+    text-align: left;
+
+    padding: 1rem 2rem;
+}
+
+main section.table table tr th:first-child,
+main section.table table tr td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    
+}
+
+main section.table table tr td:nth-child(1) {
+    color: rgb(0, 0, 47);
+}
+
+main section.table table tr td:nth-child(2) {
+    color: #12a454;
+}
+
+main section.table table tr td:nth-child(3) {
+    color: #e92929;
+}
+
+main section.table table td {
+    background-color: white;
+
+    padding: 1rem 2rem;
+
+}
+
+.modal-overlay,
+.modal-overlayEdit {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay.active,
+.modal-overlayEdit.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay .modal,
+.modal-overlayEdit .modal {
+    background-color: #f0f2f5;
+
+    padding: 2.4rem;
+    max-width: min(100vw, 50rem);
+
+    position: relative;
+    z-index: 1;
+
+    overflow: auto;
+}
+
+.modal-overlay .modal div#form form,
+.modal-overlayEdit .modal div#formEdit form {
+    display: flex;
+}
+
+.modal-overlay .modal div form div.input-group,
+.modal-overlayEdit .modal div form div.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay .modal div#form form div.input-group input,
+.modal-overlayEdit .modal div#formEdit form div.input-group input {
+    width: 100%;
+    padding: 1.5rem;
+
+    font-size: 1rem;
+
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+
+    margin-top: 1rem;
+}
+
+.modal-overlay .modal div form div.actions,
+.modal-overlayEdit .modal div form div.actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.modal-overlay .modal div#form form div.actions a,
+.modal-overlayEdit .modal div#formEdit form div.actions a {
+    text-decoration: none;
+
+    border: 3px solid #49aa26;
+
+    color: #49aa26;
+}
+
+.modal-overlay .modal div form div.actions button,
+.modal-overlayEdit .modal div form div.actions button {
+    background-color: green;
+
+    color: white;
+
+    border: none;
+}
+
+.modal-overlay .modal div form div.actions a,
+.modal-overlay .modal div form div.actions button,
+.modal-overlayEdit .modal div form div.actions a,
+.modal-overlayEdit .modal div form div.actions button {
+    text-align: center;
+
+    padding: 1rem 2.5rem;
+
+    margin-top: 1.5rem;
+
+    font-size: 1.2rem;
+
+    border-radius: 0.3rem;
+}
+
+footer {
+    text-align: center;
+
+    padding: 4rem 0 2rem;
+
+    opacity: 0.6;
+}
+
+@media (min-width: 700px) {
+    html {
+        font-size: 87.5%;
+    }
+
+    main section.balanco {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+    }
+
+    main section.balanco div.cards {
+        width: 30%;
+    }
+}
+
+@media (max-width: 400px) {
+    .modal-overlay .modal div#form form div.actions,
+    .modal-overlayEdit .modal div#formEdit form div.actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .modal-overlay .modal div form div.actions a,
+    .modal-overlay .modal div form div.actions button,
+    .modal-overlayEdit .modal div form div.actions a,
+    .modal-overlayEdit .modal div form div.actions button {
+        width: 100%;
+    }
+}
